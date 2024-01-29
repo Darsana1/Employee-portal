@@ -1,0 +1,36 @@
+<div class="d-flex">
+    <div *ngIf="showSidebar" class="sidebar text-light d-flex flex-column p-5" style="height: 115vh;width: 250px;background-color: darkorange;">
+      <a style="text-decoration: none;margin-top: 10px;font-weight: bold;color: ghostwhite;" routerLink="/dashboard">Home</a>
+      <a style="text-decoration: none;margin-top: 10px;font-weight: bold;color: ghostwhite;" routerLink="/users">Users</a>
+     <button (click)="logout()" class="btn btn-secondary mt-auto"> Logout<i class="fa-solid fa-right-from-bracket fa-2xl ms-1"></i></button>
+    </div>
+    <div class="p-3 w-100">
+       <div class="row">
+        <div class="col-lg-8">
+         <div class="admin-banner rounded d-flex align-items-center shadow" style="height :180px;background-image: url(https://images.unsplash.com/photo-1614853036460-e8cff7410ee9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJhbm5lciUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);background-repeat: no-repeat;background-size: cover;">
+        <h1 class="ms-5 fw-bolder text-light d-flex align-items-center fs-3"><i class="fa-solid fa-bars fa-2x me-3" (click)="menuBtnClick()"></i><span style="height: 40px;">Welcome {{admin_name}}</span></h1></div>
+        <div class="row m-1">
+          <div class="col-lg-5 border rounded shadow mt-3">
+         
+          <mat-card class="demo-inline-calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+          </mat-card>
+        </div>
+      <div class="col-lg-1"></div>
+    <div class="col-lg-6 border rounded shadow  mt-3">
+     <app-chart></app-chart>
+    </div>
+  </div>
+        </div>
+        <div class="col-lg-4">
+          <div style="height: 400px;" class="edit-admin border rounded shadow p-2 bg-light">
+            <app-update-admin (onAdminChange)="getUpdateAdmin($event)"></app-update-admin>
+        </div>
+        <div style="height: 190px;background-image: url(https://images.unsplash.com/photo-1614853036460-e8cff7410ee9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJhbm5lciUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);background-size: cover;" class=" border rounded shadow p-2 bg-success  d-flex align-items-center justify-content-center mt-2">
+          <h2><i class="fa-solid fa-users me-3 fw-bolder" ></i>Employees : {{employeeCount}}</h2>
+        </div>
+       </div>
+       
+       </div>
+    </div>
+</div>
