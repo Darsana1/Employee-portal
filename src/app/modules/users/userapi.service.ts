@@ -6,7 +6,7 @@ import { UserSchema } from './users.model';
   providedIn: 'root'
 })
 export class UserapiService {
-SERVER_URL = "https://employee-portal-server-6463.onrender.com/"
+SERVER_URL = "https://employee-portal-server-6463.onrender.com"
   constructor(private http:HttpClient) { }
   //adduser api
   addUserAPI(user:UserSchema){
